@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 2a4a35f9f3d6a42cddfc4c2e9b982b3a17e7836adab4596d7181ef1a030881e1
+-- hash: f52cbf4687a752a674a299bb69db4e6e2e9a26fbcba89fd09098b75213956cb8
 
 name:           Get
 version:        0.1.0.0
@@ -32,6 +32,7 @@ library
       src
   build-depends:
       base >=4.7 && <5
+    , singletons ==2.3.1
   exposed-modules:
       Control.Get
   other-modules:
@@ -47,6 +48,7 @@ test-suite Get-test
   build-depends:
       Get
     , base >=4.7 && <5
+    , singletons ==2.3.1
   other-modules:
       Paths_Get
   default-language: Haskell2010
