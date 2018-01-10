@@ -2,10 +2,10 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: e40d9d734a10243562e838089e122133b917570f6f5e33c2fb495bfb6a924369
+-- hash: 30432a52fec2c47773bbe8af90d352f609f0b7cfc926436a2db1549755332d46
 
 name:           Get
-version:        0.1.0.0
+version:        0.2018.1.10
 synopsis:       get stuff out of stuff
 description:    Please see the README on Github at <https://github.com/MarisaKirisame/Get#readme>
 category:       control
