@@ -1,5 +1,5 @@
 name:                Get
-version:             0.1.0.0
+version:             0.2018.1.10
 github:              "MarisaKirisame/Get"
 license:             BSD3
 author:              "Marisa Kirisame"
@@ -18,6 +18,7 @@ description:         Please see the README on Github at <https://github.com/Mari
 dependencies:
 - base >= 4.7 && < 5
 - singletons == 2.3.1
+- constraints == 0.9.1
 
 library:
   source-dirs: src
