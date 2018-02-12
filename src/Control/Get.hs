@@ -30,7 +30,6 @@ data Top = Top
 fromVal :: a -> Proxy a
 fromVal _ = Proxy
 
--- Lattice Specific Operation so they need to be resolved first. Write your instance at TryGetAux.
 class TryGet as from self ok | as from self -> ok where
   tryGetSing :: Proxy self -> Proxy from -> Proxy as -> Sing ok
   tryGetVal :: self -> from -> Proxy as -> If ok as ()
