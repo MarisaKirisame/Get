@@ -36,6 +36,10 @@ class TryGet as from self ok | as from self -> ok where
   tryGet :: self -> from -> Proxy as -> (If ok as (), Sing ok)
   tryGet self from p = (tryGetVal self from p, tryGetSing (fromVal self) (fromVal from) p)
 
+instance ok ~ True => TryGet a a self ok where
+  tryGetVal _ a _ = a
+  tryGetSing _ _ _ = STrue
+
 class TryGet as from from True => Get as from where
   get :: from -> as
   get f = res where
@@ -147,10 +151,6 @@ instance (TryGet as a self aOK, TryGetOrR as b self aOK orOK) => TryGet as (Or a
         SFalse -> ()
   tryGetVal self o@(OrRight b) p = tryGetOrRVal self b (tryGetSing (fromVal self) (orLeftP $ fromVal o) p) p
   tryGetSing self from p = tryGetOrRSing self (orRightP from) (tryGetSing self (orLeftP from) p) p
-
-instance ok ~ True => TryGet a a self ok where
-  tryGetVal _ a _ = a
-  tryGetSing _ _ _ = STrue
 
 newtype Protected x = Protected { runProtected :: x }
 
